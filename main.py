@@ -1,8 +1,9 @@
 import libreria_pokemon as libPKM
+import acciones_pokemon as accion
 
 """
     AGREGAR:
-    - loadPkm
+    ✔ loadPkm
     - menu para hacer cosas con el pkm
     - iniciar programa (?)
     - crear pokemon segun entrada de usuario
@@ -11,6 +12,6 @@ import libreria_pokemon as libPKM
 """
 
 
-pepito = libPKM.loadPkm('')
+pepito = libPKM.crearPkm('pepito','mudkip')
 
-print(pepito)
+libPKM.imprimirPkm(pepito)
