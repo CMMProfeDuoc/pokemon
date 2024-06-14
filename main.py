@@ -1,5 +1,6 @@
 from libreria_pokemon import *
 import acciones_pokemon as accion
+import herramientas
 
 """
     AGREGAR:
@@ -16,8 +17,8 @@ import acciones_pokemon as accion
     # 1.2. si NO hay, hacer que el usuario cree un pkm y guardarlo
 
 
-lista_pokemon = initPrograma()
+mi_pkm = initPrograma()[0]
+papaya = herramientas.cargarAlimentos()[2]
 
-for pokemon in lista_pokemon:
-    imprimirPkm(pokemon)
-    print('-'*10)
+accion.alimentar(mi_pkm,papaya)
+

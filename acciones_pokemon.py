@@ -1,6 +1,6 @@
-def alimentar (pkm:dict, comida:int) -> None:
+def alimentar (pkm:dict, alimento:dict) -> None:
     hambre = int(pkm['hambre'])
-    hambre -= comida
+    hambre -= int(alimento['alimentacion'])
     if (hambre < 0):
         hambre = 0
     pkm['hambre'] = str(hambre)
