@@ -127,3 +127,18 @@ def getPokemonInfoByEspecie (especie:str) -> dict:
     datos_pokemon.close()
 
     return pkmInfo
+
+def initPrograma () -> list[dict]:
+    from os import listdir
+    lista_archivos = []
+    lista_pokemon = []
+    for nombre_archivo in listdir('./'):
+        if ('.pkm' in nombre_archivo):
+            lista_archivos.append(nombre_archivo)
+
+    for archivo in lista_archivos:
+        lista_pokemon.append(loadPkm(archivo))
+
+    return lista_pokemon
+
+    
