@@ -1,3 +1,10 @@
+#import libreria_pokemon
+
+menu_acciones = {
+    'alimentar':['1'],
+    'saludar':['2'],
+}
+
 def alimentar (pkm:dict, alimento:dict) -> None:
     hambre = int(pkm['hambre'])
     hambre -= int(alimento['alimentacion'])
@@ -5,4 +12,4 @@ def alimentar (pkm:dict, alimento:dict) -> None:
         hambre = 0
     pkm['hambre'] = str(hambre)
 
-#hagan cosas aca
+

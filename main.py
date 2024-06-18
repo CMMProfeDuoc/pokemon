@@ -44,8 +44,9 @@ while (True):
         print('comando no valido')
 
     if (selec in opciones_menu['accion']):
-        #hacer acciones
-        ...
+        lista_acciones = accion.menu_acciones
+        sel = herramientas.imprimirMenu(lista_acciones)
+        
 
     if (selec in opciones_menu['cargar']):
         for i,pkm in enumerate(lista_pokemon):
