@@ -63,10 +63,14 @@ def checkFelicidad (felicidad:int) -> str:
         return 'Feliz!'
 
 def imprimirPkm (pkm:dict) -> None:
-    print(pkm['nombre'])
-    print(pkm['especie'] + ' || ' + pkm['tipo'])
-    print('Hambre => ' + pkm['hambre'] + ' => ' + checkHambre(int(pkm['hambre'])))
-    print('Felicidad => ' + pkm['felicidad'] + ' => ' + checkFelicidad(int(pkm['felicidad'])))
+    if (pkm['tipo'] == 'misigno'):
+        print(pkm['nombre'])
+        print('ERROR')
+    else:
+        print(pkm['nombre'])
+        print(pkm['especie'] + ' || ' + pkm['tipo'])
+        print('Hambre => ' + pkm['hambre'] + ' => ' + checkHambre(int(pkm['hambre'])))
+        print('Felicidad => ' + pkm['felicidad'] + ' => ' + checkFelicidad(int(pkm['felicidad'])))
 
 def getPokemonInfoByID (id:int) -> dict:
     datos_pokemon = open('pokemon_list.csv')
@@ -75,7 +79,8 @@ def getPokemonInfoByID (id:int) -> dict:
 
     isPkm = False
     pkmInfo = {
-        'tipo':'misigno'
+        'tipo':'misigno',
+        'especie':'desconocida',
     }
     while (True):
         pokemon = datos_pokemon.readline().replace('\n','').replace('"','').lower().split(',')
@@ -105,16 +110,19 @@ def getPokemonInfoByEspecie (especie:str) -> dict:
 
     isPkm = False
     pkmInfo = {
-        'tipo':'misigno'
+        'tipo':'misigno',
+        'especie':'desconocida'
     }
     while (True):
         pokemon = datos_pokemon.readline().replace('\n','').replace('"','').lower().split(',')
+        if (pokemon == ['']):
+            break
+        
         if (pokemon[1] == str(especie).lower()):
             isPkm = True
             break
 
-        if (pokemon == ['']):
-            break
+        
 
     if (isPkm):
         pkmInfo = {
